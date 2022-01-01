@@ -1,0 +1,29 @@
+body {
+  margin: 0 auto;
+  width: 98%;
+}
+
+main {
+  display: flex;
+  /* width: 800px; */
+  background: salmon;
+}
+
+.container-1 {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-2 {
+  width: 25%;
+  background: #fff;
+  justify-content: center;
+  margin: 10px;
+}
+
+.top-text {
+  border-top: 8px solid #000;
+}
