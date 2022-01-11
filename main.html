@@ -1,42 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>bbq master</title>
+    <title>Luke's Webinars</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css\style.css" rel="stylesheet" />
   </head>
   <body>
-    <main>
-      <div class="container-1">
-        <div>
-          <p class="top-text">mouthwateringly delicious</p>
-        </div>
-        <p class="middle-text">
-          Learn how to make <span>the best BBQ ribs</span> in town
-        </p>
-        <p class="bottom-text">join us for this live webinar</p>
-      </div>
+    <div class="intro">
+      <h1>Learn where to get the <strong>best milk</strong> in the galaxy</h1>
 
-      <div class="container-2">
-        <div>
-          <p>Become a BBQ master!</p>
-          <p>register today</p>
-        </div>
-        <div>
-          <p>
-            BBQ isn't just standing in front of youe grill with it on full blast
-            nad hoping for the best. It'san art! One way to speed up the process
-            is to learn from the best. You can do just that by signing up for
-            this free webinar!
-          </p>
-        </div>
-        <div>form</div>
-        <div>
-          <p>We'll never share your information without yor permission</p>
-        </div>
-      </div>
-    </main>
+      <p>Join us for this live webinar</p>
+      <p class="top-text">Mouthwateringly delicious</p>
+    </div>
+
+    <div id="Main-Content" class="main-content">
+      <h2>Become a Milk Connoisseur!</h2>
+      <p>Register Today</p>
+      <p>
+        Join Luke Skywalker as he not only shows you were to find the best
+        blue/green milk in the galaxay, he will even show you several ways to
+        harvest it!
+      </p>
+
+      <form
+        id="Email-Collector"
+        class="email-collector"
+        action="#"
+        method="POST"
+      >
+        <input name="firstName" type="text" required placeholder="first name" />
+        <input name="emailAddress" type="email" required placeholder="email" />
+        <button class="btn btn-primary" type="submit">Register</button>
+      </form>
+
+      <p class="fine-print">
+        We will never share your information with the Empire
+      </p>
+    </div>
+
+    <script>
+      let emailCollectorForm = document.getElementById("Email-Collector");
+      emailCollectorForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        console.log("The event is firing!");
+
+        let ourFormData = new FormData(event.target);
+
+        let userFirstName = ourFormData.get("firstName");
+
+        let updatedHtmlContent = `
+                  
+                    <img src="images/luke-green-updated.gif" alt="luke drinking">
+                    <h2>Congratulations, ${userFirstName}!</h2>
+                    
+                    <p>You're on your way to becoming a Milk Connoisseur!</p>
+
+                `;
+        let ourMainContent = document.getElementById("Main-Content");
+        let img;
+        let getHolder = document.querySelector("img");
+        ourMainContent.innerHTML = updatedHtmlContent;
+        ourMainContent.style.paddingTop = "50px";
+        // getHolder.style.width = "50%";
+        // getHolder.style.marginBottom = "20px";
+      });
+    </script>
   </body>
 </html>
